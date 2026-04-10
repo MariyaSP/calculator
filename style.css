@@ -1,0 +1,426 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 2.2rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .badge-pro {
+            display: inline-block;
+            background: #e8eaf6;
+            border: 1px solid #1d7793;
+            color: #1d7793;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        /* Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 25px;
+        }
+
+        /* Tabs panel */
+        .tabs-panel {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            max-height: 85vh;
+        }
+
+        .tabs-header {
+            display: flex;
+            background: #f8f9fc;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e8ecf2;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+
+        .tab-btn {
+            padding: 14px 18px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #5a6a85;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            background: #e7f2f5;
+            color: #1d7793;
+        }
+
+        .tab-btn.active {
+            color: #1d7793;
+            border-bottom-color: #3292af;
+            background: white;
+            font-weight: 600;
+        }
+
+        /* Контейнер для контента вкладок с фиксированной высотой и скроллом */
+        .tabs-content-container {
+            flex: 1;
+            overflow-y: auto;
+            background: white;
+            min-height: 400px;
+            max-height: 65vh;
+        }
+
+        .tabs-content-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .tabs-content-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .tabs-content-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        /* Tab content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Sub sections */
+        .sub-section {
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #fafbff;
+            border-radius: 12px;
+            border: 1px solid #edf2f7;
+        }
+
+        .sub-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 3px solid #1d7793;
+        }
+
+        /* Option item - кликабельная область */
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+            border: 1px solid transparent;
+        }
+
+        .option-item:hover {
+            background: #f5f7ff;
+            border-color: #e0e7ff;
+        }
+
+        .option-item.selected {
+            background: #f0f4ff;
+            border-color: #1d7793;
+        }
+
+        .option-checkbox {
+            margin-right: 14px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #1d7793;
+            pointer-events: none;
+        }
+
+        .option-info {
+            flex: 1;
+            pointer-events: none;
+        }
+
+        .option-name {
+            font-weight: 500;
+            color: #1e293b;
+            font-size: 0.85rem;
+        }
+
+        .option-desc {
+            font-size: 0.7rem;
+            color: #7c8ba0;
+            margin-top: 2px;
+        }
+
+        .option-price {
+            font-weight: 700;
+            color: #10b981;
+            font-size: 0.9rem;
+            min-width: 95px;
+            text-align: right;
+            pointer-events: none;
+        }
+
+        /* Multi controls */
+        .multi-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 12px;
+            pointer-events: auto;
+        }
+
+        .multi-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            color: #475569;
+        }
+
+        .multi-btn:hover {
+            background: #1d7793;
+            color: white;
+            border-color: #1d7793;
+        }
+
+        .multi-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: #f1f5f9;
+        }
+
+        .multi-count {
+            min-width: 30px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1e293b;
+            pointer-events: none;
+        }
+
+        /* Estimate panel */
+        .estimate-panel {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .estimate-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8ecf2;
+        }
+
+        .estimate-header h2 {
+            font-size: 1.3rem;
+            color: #1e293b;
+        }
+
+        .estimate-header h2 span {
+            color: #1d7793;
+        }
+
+        .total-amount {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f0fdf4;
+            border-radius: 16px;
+            border: 1px solid #dcfce7;
+        }
+
+        .total-amount .label {
+            font-size: 0.8rem;
+            color: #64748b;
+            letter-spacing: 1px;
+        }
+
+        .total-amount .amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+
+        .total-amount .amount small {
+            font-size: 0.9rem;
+        }
+
+        .estimate-details {
+            max-height: 450px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #edf2f7;
+            font-size: 0.8rem;
+        }
+
+        .detail-name {
+            color: #475569;
+            flex: 1;
+        }
+
+        .detail-badge {
+            font-size: 0.65rem;
+            background: #fef5e7;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+            color: #f39c12;
+        }
+
+        .detail-price {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .remove-item {
+            color: #f87171;
+            cursor: pointer;
+            margin-left: 12px;
+            font-size: 1rem;
+            transition: color 0.2s;
+            width: 22px;
+            text-align: center;
+        }
+
+        .remove-item:hover {
+            color: #dc2626;
+        }
+
+        .empty-details {
+            text-align: center;
+            color: #94a3b8;
+            padding: 30px;
+            /* font-style: italic; */
+        }
+
+        .btn-reset {
+            width: 100%;
+            padding: 12px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #475569;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.2s;
+        }
+
+        .btn-reset:hover {
+            background: #e2e8f0;
+        }
+
+        .btn-export {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #1d7793, #58dae8);
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-export:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .stats {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e8ecf2;
+            font-size: 0.75rem;
+            color: #7c8ba0;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #8a99b4;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .estimate-panel {
+                position: static;
+            }
+            .tab-btn {
+                padding: 10px 12px;
+                font-size: 0.7rem;
+            }
+        }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Калькулятор стоимости сайта | Проф смета</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/8639975.png" type="image/x-icon">
+
+</head> 
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><img src="./img/8639975.png" alt="logo" width="40"> Калькулятор стоимости сайта</h1>
+            <p>Профессиональная смета на основе детального прайс-листа (50+ позиций)</p>
+            <div class="badge-pro">⚡ ПРО ВЕРСИЯ • 7 категорий работ</div>
+        </div>
+
+        <div class="main-grid">
+            <div class="tabs-panel">
+                <div class="tabs-header" id="tabsHeader"></div>
+                <div class="tabs-content-container" id="tabsContentContainer">
+                    <div id="tabsContainer"></div>
+                </div>
+            </div>
+            <div class="estimate-panel">
+                <div class="estimate-header">
+                    <h2>📋 <span>СМЕТА</span> ПРОЕКТА</h2>
+                </div>
+                <div class="total-amount">
+                    <div class="label">ОБЩАЯ СТОИМОСТЬ</div>
+                    <div class="amount" id="totalAmount">0 ₽</div>
+                </div>
+                <div class="estimate-details" id="estimateDetails">
+                    <div class="empty-details">✓ Отметьте работы на вкладках слева</div>
+                </div>
+                <button class="btn-reset" id="resetBtn">⟳ Сбросить все</button>
+                <button class="btn-export" id="exportBtn">📎 Экспорт сметы</button>
+                <div class="stats" id="stats">Выбрано работ: 0 | Итого: 0 ₽</div>
+            </div>
+        </div>
+        <div class="footer">© Разработчик - Карцева Мария, 2026</div>
+    </div>
+</body>
+</html>
