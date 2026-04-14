@@ -424,3 +424,9 @@
                 font-size: 0.7rem;
             }
         }
+
+        @media (max-width: 540px) {
+            .option-price{
+                min-width: 20px;
+            }
+        }
